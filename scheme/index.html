@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Масоны Самсона</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #2d3748;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      padding: 20px 30px;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 28px;
+      font-weight: normal;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #4a5568;
+    }
+
+    .scheme {
+      position: relative;
+      height: 700px;
+      width: 950px;
+    }
+
+    .box {
+      position: absolute;
+      background: #fff;
+      padding: 8px 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+    }
+    .box.yellow { color: #d69e2e; }
+    .box.red { color: #e53e3e; }
+
+    /* Линия влево */
+    .line-left::before {
+      content: '';
+      position: absolute;
+      height: 2px;
+      background: #fff;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* Линия вправо */
+    .line-right::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      background: #fff;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* Вертикальные линии */
+    .vline {
+      position: absolute;
+      width: 2px;
+      background: #fff;
+    }
+
+    /* === ПОЗИЦИИ === */
+
+    /* Алликсаар */
+    .alliksaar { left: 55px; top: 55px; }
+    .alliksaar::before { left: -25px; width: 25px; }
+
+    /* Ду Хаст */
+    .duhast { left: 770px; top: 35px; }
+    .duhast::before { left: -120px; width: 120px; }
+
+    /* Анастасия */
+    .anastasia { left: 770px; top: 115px; }
+    .anastasia::before { left: -120px; width: 120px; }
+
+    /* Александр */
+    .aleksandr { left: 770px; top: 195px; }
+    .aleksandr::before { left: -120px; width: 120px; }
+
+    /* Станислав */
+    .stanislav { left: 130px; top: 195px; }
+    .stanislav::before { left: -100px; width: 100px; }
+    .stanislav::after { right: -520px; width: 520px; }
+
+    /* Людмила */
+    .ludmila { left: 280px; top: 295px; }
+    .ludmila::before { left: -180px; width: 180px; }
+
+    /* Ольга */
+    .olga { left: 280px; top: 385px; }
+    .olga::before { left: -180px; width: 180px; }
+    .olga::after { right: -370px; width: 370px; }
+
+    /* Дмитрий */
+    .dmitriy { left: 770px; top: 335px; }
+    .dmitriy::before { left: -120px; width: 120px; }
+
+    /* Кристина */
+    .kristina { left: 770px; top: 415px; }
+    .kristina::before { left: -120px; width: 120px; }
+
+    /* Максим */
+    .maksim { left: 770px; top: 495px; }
+    .maksim::before { left: -120px; width: 120px; }
+
+    /* Сергей */
+    .sergey { left: 280px; top: 535px; }
+    .sergey::before { left: -180px; width: 180px; }
+
+    /* Игорь */
+    .igor { left: 130px; top: 595px; }
+    .igor::before { left: -100px; width: 100px; }
+
+    /* Антон */
+    .anton { left: 130px; top: 655px; }
+    .anton::before { left: -100px; width: 100px; }
+
+    /* === ВЕРТИКАЛЬНЫЕ ЛИНИИ === */
+
+    /* Главная левая (от Алликсаар до Антона) */
+    .v1 { left: 30px; top: 75px; height: 600px; }
+
+    /* Правая верхняя (Ду Хаст - Александр) */
+    .v2 { left: 650px; top: 55px; height: 160px; }
+
+    /* Вертикаль от Станислава */
+    .v3 { left: 100px; top: 235px; height: 320px; }
+
+    /* Правая нижняя (Дмитрий - Максим) */
+    .v4 { left: 650px; top: 355px; height: 160px; }
+
+    /* Горизонтальная линия от Алликсаар вправо */
+    .h-alliksaar {
+      position: absolute;
+      left: 165px;
+      top: 75px;
+      width: 485px;
+      height: 2px;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Масоны Самсона</h1>
+
+  <div class="scheme">
+    <!-- Вертикальные линии -->
+    <div class="vline v1"></div>
+    <div class="vline v2"></div>
+    <div class="vline v3"></div>
+    <div class="vline v4"></div>
+
+    <!-- Горизонтальная линия от Алликсаар -->
+    <div class="h-alliksaar"></div>
+
+    <!-- Блоки -->
+    <div class="box line-left alliksaar">Алликсаар</div>
+
+    <div class="box yellow line-left duhast">Ду Хаст<br>Вячеславович</div>
+    <div class="box line-left anastasia">Анастасия Ширинкина</div>
+    <div class="box line-left aleksandr">Александр Троян</div>
+
+    <div class="box line-left line-right stanislav">Станислав<br>Клитотехнис</div>
+
+    <div class="box yellow line-left ludmila">Людмила<br>Водолазская</div>
+    <div class="box line-left line-right olga">Ольга Боргдорф</div>
+
+    <div class="box line-left dmitriy">Дмитрий Возигнуй</div>
+    <div class="box line-left kristina">Кристина Болтушкина</div>
+    <div class="box red line-left maksim">Максим Висюлькин</div>
+
+    <div class="box line-left sergey">Сергей Брус</div>
+
+    <div class="box line-left igor">Игорь Зверёк</div>
+    <div class="box line-left anton">Антон Строй</div>
+  </div>
+</body>
+</html>

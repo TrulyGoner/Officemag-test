@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  padding: 20px;
+  background: #fff;
+}
+
+.buttons-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 7px 14px;
+  font-size: 13px;
+  border-radius: 3px;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #bbb;
+  color: #555;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: inherit;
+}
+
+.btn-outline {
+  background: #fff;
+  border: 1px solid #bbb;
+  color: #555;
+}
+
+.btn-bg-1 { background: #EBEBEB; }
+.btn-bg-2 { background: #F4F4F4; }
+.btn-bg-3 { background: #E1E1E1; }
+.btn-bg-4 { background: #fff; }
+
+.btn-outline-red {
+  border: 1px solid #DC241F;
+  color: #555;
+}
+
+.btn-red-1 {
+  background: #CA130C;
+  border: 1px solid #CA130C;
+  color: #fff;
+}
+.btn-red-2 {
+  background: #E83029;
+  border: 1px solid #E83029;
+  color: #fff;
+}
+.btn-red-3 {
+  background: #A9120C;
+  border: 1px solid #A9120C;
+  color: #fff;
+}
+.btn-red-4 {
+  background: #CA130C;
+  border: 1px solid #CA130C;
+  color: #fff;
+}
+
+.btn-green-1 {
+  background: #6E9735;
+  border: 1px solid #6E9735;
+  color: #fff;
+}
+.btn-green-2 {
+  background: #85B444;
+  border: 1px solid #85B444;
+  color: #fff;
+}
+.btn-green-3 {
+  background: #5E822B;
+  border: 1px solid #5E822B;
+  color: #fff;
+}
+.btn-green-4 {
+  background: #6E9735;
+  border: 1px solid #6E9735;
+  color: #fff;
+}
+
+.btn-outline-green-1 {
+  background: #fff;
+  border: 1px solid #6E9735;
+  color: #555;
+}
+.btn-outline-green-2 {
+  background: #fff;
+  border: 1px solid #85B444;
+  color: #555;
+}
+.btn-outline-green-3 {
+  background: #fff;
+  border: 1px solid #5E822B;
+  color: #555;
+}
+.btn-outline-green-4 {
+  background: #fff;
+  border: 1px solid #bbb;
+  color: #555;
+}
+
+.btn-arrow::after {
+  content: "▸";
+  margin-left: 3px;
+  color: #DC241F;
+}
+
+.btn-arrow-gray::after {
+  content: "▸";
+  margin-left: 3px;
+  color: #B6B6B6;
+}
+
+.btn-fade {
+  opacity: 0.5;
+}
+
+.btn-icon {
+  background: #EBEBEB;
+  color: #000;
+}
+.btn-icon .icon {
+  font-size: 12px;
+  color: #000;
+}
+.icon-svg {
+  width: 14px;
+  height: 14px;
+  color: #000;
+}

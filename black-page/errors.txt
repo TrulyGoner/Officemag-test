@@ -1,0 +1,28 @@
+grit →  grid опечатка
+!important !important → !important | дублирование
+top 10px → top: 10px | пропущено двоеточие
+inline=block → inline-block | знак равно вместо дефиса
+clas= → class= | опечатка 
+background: transparant → background: transparent | опечатка
+colour: → color | неккоректное написание
+centner → center | опечатка
+red, → red; | запятая вместо точки с запятой
+displat: → display: | опечатка
+css"" → css" | лишняя кавычка
+<link> после </html> | должен быть в <head>
+style="background: #000000 url(27685708057_b6bdb65f3c_o.bmp) no-repeat 50% 0;" | нужно прописывать в стилях
+html, body  | html лишний
+body .bg-light  | body лишний
+Ну и прощальная записка, того, кто исчез, надеюсь ему сейчас хорошо
+
+Проблемы в логике:
+<meta charset> после <script> | должен быть первым в <head>
+<meta name="viewport" content="width=1920"> → width=device-width, initial-scale=1 | не адаптивно
+position: absolute на <html> | ломает layout
+overflow: hidden на <html> | скрывает контент
+* { display: grid !important } | ломает все элементы
+html > *:last-child { background: #ffffff00 } | неясно зачем вообще
+object-fit: scale-down на <a> | не работает на ссылках
+top: -50.44px | хардкод смещения вместо margin/padding
+Пустой <h1></h1> 
+Неиспользуемые классы product-device, product-device-2

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заполните поля</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Заполните поля</h1>
+    <span class="hint">ну пожалуйста</span>
+</header>
+
+<div class="container">
+    <form class="form">
+        <section class="section">
+            <h2 class="section-title">Основное</h2>
+            
+            <div class="field-row">
+                <label class="field-label">Имя</label>
+                <div class="field-right">
+                    <input 
+                        type="text" 
+                        class="field-input" 
+                        placeholder="по паспорту"
+                        required>
+                </div>
+            </div>
+            
+            <div class="field-row">
+                <label class="field-label">Цвет вашего настроения</label>
+                <div class="field-right">
+                    <input type="color" class="field-color" value="#0000ff">
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section section-yellow">
+            <h2 class="section-title">Дополнительное</h2>
+            
+            <div class="field-row">
+                <label class="field-label">Комментарий</label>
+                <div class="field-right">
+                    <textarea 
+                        class="field-textarea" 
+                        placeholder="Напишите хоть что-нибудь.&#10;Если хотите, конечно."></textarea>
+                    </textarea>
+                </div>
+            </div>
+        </section>
+
+        <div class="checkboxes">
+            <label class="checkbox">
+                <input type="radio" name="radio">
+                <span>Ну а тут просто полежит радиобатон</span>
+            </label>
+            
+            <label class="checkbox checkbox-checked">
+                <input type="checkbox" checked required>
+                <span>
+                    Соглашаюсь на всё, что бы вы не придумали и осознаю,
+                    что это может означать
+                    <a href="#" class="link">что угодно</a>
+                </span>
+            </label>
+        </div>
+
+        <button class="submit-btn" type="submit">
+            Отправить все мои данные
+        </button>
+    </form>
+</div>
+
+</body>
+</html>
