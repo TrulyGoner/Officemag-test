@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #4a6fa5 0%, #2d5a8f 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 40px;
+}
+
+.beautiful-button {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(180deg, #5a7ba8 0%, #3d5f8a 100%);
+    border: 2px solid rgba(139, 173, 217, 0.6);
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-out;
+    transform: translateY(0);
+    user-select: none;
+}
+
+.button-text {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.beautiful-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    background: linear-gradient(180deg, #6585b5 0%, #4a6f98 100%);
+    border-color: rgba(159, 193, 237, 0.7);
+}
+
+.beautiful-button:active,
+.beautiful-button.pressed {
+    transform: translateY(0) scale(0.97);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, #3d5f8a 0%, #2d4d6f 100%);
+    border-color: rgba(120, 150, 190, 0.5);
+    transition: all 0.1s ease-in;
+}
+
+.beautiful-button:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 3px;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ripple.animate {
+    animation: ripple-animation 0.6s ease-out;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.beautiful-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: translateY(0);
+}
+
+.beautiful-button:disabled:hover {
+    transform: translateY(0);
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}

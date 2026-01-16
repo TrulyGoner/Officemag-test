@@ -12,179 +12,265 @@
     }
 
     body {
-      background: #2d3748;
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
-      padding: 20px 30px;
+      background: #2D333B;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px;
     }
 
     h1 {
-      color: #fff;
-      font-size: 28px;
-      font-weight: normal;
-      margin-bottom: 20px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #4a5568;
+      color: white;
+      font-size: 32px;
+      margin-bottom: 40px;
+      font-weight: 400;
     }
 
-    .scheme {
+    .diagram {
       position: relative;
-      height: 700px;
-      width: 950px;
+      width: 100%;
+      min-height: 700px;
     }
 
     .box {
       position: absolute;
-      background: #fff;
-      padding: 8px 20px;
+      background: white;
+      border: 2px solid #ddd;
+      padding: 15px 20px;
       text-align: center;
       font-size: 14px;
       color: #333;
+      min-width: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.4;
     }
-    .box.yellow { color: #d69e2e; }
-    .box.red { color: #e53e3e; }
 
-    /* Линия влево */
-    .line-left::before {
-      content: '';
+    /* Линии */
+    .line {
       position: absolute;
+      background: #AAAAAA;;
+    }
+
+    .line-h {
       height: 2px;
-      background: #fff;
-      top: 50%;
-      transform: translateY(-50%);
     }
 
-    /* Линия вправо */
-    .line-right::after {
-      content: '';
-      position: absolute;
-      height: 2px;
-      background: #fff;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    /* Вертикальные линии */
-    .vline {
-      position: absolute;
+    .line-v {
       width: 2px;
-      background: #fff;
     }
 
-    /* === ПОЗИЦИИ === */
-
-    /* Алликсаар */
-    .alliksaar { left: 55px; top: 55px; }
-    .alliksaar::before { left: -25px; width: 25px; }
-
-    /* Ду Хаст */
-    .duhast { left: 770px; top: 35px; }
-    .duhast::before { left: -120px; width: 120px; }
-
-    /* Анастасия */
-    .anastasia { left: 770px; top: 115px; }
-    .anastasia::before { left: -120px; width: 120px; }
-
-    /* Александр */
-    .aleksandr { left: 770px; top: 195px; }
-    .aleksandr::before { left: -120px; width: 120px; }
-
-    /* Станислав */
-    .stanislav { left: 130px; top: 195px; }
-    .stanislav::before { left: -100px; width: 100px; }
-    .stanislav::after { right: -520px; width: 520px; }
-
-    /* Людмила */
-    .ludmila { left: 280px; top: 295px; }
-    .ludmila::before { left: -180px; width: 180px; }
-
-    /* Ольга */
-    .olga { left: 280px; top: 385px; }
-    .olga::before { left: -180px; width: 180px; }
-    .olga::after { right: -370px; width: 370px; }
-
-    /* Дмитрий */
-    .dmitriy { left: 770px; top: 335px; }
-    .dmitriy::before { left: -120px; width: 120px; }
-
-    /* Кристина */
-    .kristina { left: 770px; top: 415px; }
-    .kristina::before { left: -120px; width: 120px; }
-
-    /* Максим */
-    .maksim { left: 770px; top: 495px; }
-    .maksim::before { left: -120px; width: 120px; }
-
-    /* Сергей */
-    .sergey { left: 280px; top: 535px; }
-    .sergey::before { left: -180px; width: 180px; }
-
-    /* Игорь */
-    .igor { left: 130px; top: 595px; }
-    .igor::before { left: -100px; width: 100px; }
-
-    /* Антон */
-    .anton { left: 130px; top: 655px; }
-    .anton::before { left: -100px; width: 100px; }
-
-    /* === ВЕРТИКАЛЬНЫЕ ЛИНИИ === */
-
-    /* Главная левая (от Алликсаар до Антона) */
-    .v1 { left: 30px; top: 75px; height: 600px; }
-
-    /* Правая верхняя (Ду Хаст - Александр) */
-    .v2 { left: 650px; top: 55px; height: 160px; }
-
-    /* Вертикаль от Станислава */
-    .v3 { left: 100px; top: 235px; height: 320px; }
-
-    /* Правая нижняя (Дмитрий - Максим) */
-    .v4 { left: 650px; top: 355px; height: 160px; }
-
-    /* Горизонтальная линия от Алликсаар вправо */
-    .h-alliksaar {
+    /* Стрелки */
+    .arrow::after {
+      content: '';
       position: absolute;
-      left: 165px;
-      top: 75px;
-      width: 485px;
-      height: 2px;
-      background: #fff;
+      width: 0;
+      height: 0;
+      border-style: solid;
     }
+
+    .arrow-right::after {
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border-width: 6px 0 6px 10px;
+      border-color: transparent transparent transparent #AAAAAA;
+    }
+
+    .arrow-up::after {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 0 6px 10px 6px;
+      border-color: transparent transparent #AAAAAA transparent;
+    }
+
+    .arrow-left::after {
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border-width: 6px 10px 6px 0;
+      border-color: transparent #AAAAAA transparent transparent;
+    }
+
+    /* Позиции блоков - левая колонка */
+    .alliksaar {
+      left: 20px;
+      top: 95px;
+      width: 200px;
+      height: 60px;
+    }
+
+    .stanislav {
+      left: 140px;
+      top: 238px;
+      width: 200px;
+      height: 80px;
+    }
+
+    .lyudmila {
+      left: 260px;
+      top: 325px;
+      width: 200px;
+      height: 60px;
+    }
+
+    .olga {
+      left: 260px;
+      top: 407px;
+      width: 200px;
+      height: 60px;
+    }
+
+    .sergey {
+      left: 260px;
+      top: 590px;
+      width: 200px;
+      height: 50px;
+    }
+
+    .igor {
+      left: 140px;
+      top: 650px;
+      width: 200px;
+      height: 50px;
+    }
+
+    .anton {
+      left: 140px;
+      top: 712px;
+      width: 200px;
+      height: 50px;
+    }
+
+    /* Позиции блоков - правая колонка */
+    .du-hast {
+      left: 740px;
+      top: 85px;
+      width: 200px;
+      height: 60px;
+    }
+
+    .anastasia {
+      left: 740px;
+      top: 167px;
+      width: 200px;
+      height: 60px;
+    }
+
+    .alexandr-t {
+      left: 740px;
+      top: 249px;
+      width: 200px;
+      height: 60px;
+    }
+
+    .dmitriy {
+      left: 740px;
+      top: 407px;
+      width: 200px;
+      height: 50px;
+    }
+
+    .kristina {
+      left: 740px;
+      top: 469px;
+      width: 200px;
+      height: 50px;
+    }
+
+    .maxim {
+      left: 740px;
+      top: 531px;
+      width: 200px;
+      height: 50px;
+    }
+
   </style>
 </head>
 <body>
   <h1>Масоны Самсона</h1>
+  
+  <div class="diagram">
+    <!-- Левая колонка блоков -->
+    <div class="box alliksaar">Алликсаар</div>
+    <div class="box stanislav">Станислав<br>Клитотехнис</div>
+    <div class="box lyudmila">Людмила<br>Водолазская</div>
+    <div class="box olga">Ольга Боргдорф</div>
+    <div class="box sergey">Сергей Брус</div>
+    <div class="box igor">Игорь Зверёк</div>
+    <div class="box anton">Антон Строй</div>
 
-  <div class="scheme">
-    <!-- Вертикальные линии -->
-    <div class="vline v1"></div>
-    <div class="vline v2"></div>
-    <div class="vline v3"></div>
-    <div class="vline v4"></div>
+    <!-- Правая колонка блоков -->
+    <div class="box du-hast">Ду Хаст<br>Вячеславович</div>
+    <div class="box anastasia">Анастасия Ширинкина</div>
+    <div class="box alexandr-t">Александр Троян</div>
+    <div class="box dmitriy">Дмитрий Возигнуй</div>
+    <div class="box kristina">Кристина Болтушкина</div>
+    <div class="box maxim">Максим Висюлькин</div>
 
-    <!-- Горизонтальная линия от Алликсаар -->
-    <div class="h-alliksaar"></div>
+    <!-- Линии -->
+    <!-- Основная вертикаль слева -->
+    <div class="line line-v" style="left: 120px; top: 155px; height: 588px;"></div>
 
-    <!-- Блоки -->
-    <div class="box line-left alliksaar">Алликсаар</div>
+    <!-- К Алликсаару снизу со стрелкой вверх -->
+    <div class="line line-v arrow arrow-up" style="left: 120px; top: 155px; height: 60px;"></div>
 
-    <div class="box yellow line-left duhast">Ду Хаст<br>Вячеславович</div>
-    <div class="box line-left anastasia">Анастасия Ширинкина</div>
-    <div class="box line-left aleksandr">Александр Троян</div>
+    <!-- К Алликсаару справа со стрелкой влево -->
+    <div class="line line-h arrow arrow-left" style="left: 220px; top: 118px; width: 520px;"></div>
 
-    <div class="box line-left line-right stanislav">Станислав<br>Клитотехнис</div>
+    <!-- От основной вертикали к Станиславу -->
+    <div class="line line-h" style="left: 120px; top: 278px; width: 20px;"></div>
 
-    <div class="box yellow line-left ludmila">Людмила<br>Водолазская</div>
-    <div class="box line-left line-right olga">Ольга Боргдорф</div>
+    <!-- Вертикаль от Станислава вниз -->
+    <div class="line line-v arrow arrow-up" style="left: 240px; top: 317px; height: 305px;"></div>
 
-    <div class="box line-left dmitriy">Дмитрий Возигнуй</div>
-    <div class="box line-left kristina">Кристина Болтушкина</div>
-    <div class="box red line-left maksim">Максим Висюлькин</div>
+    <!-- От Александра Трояна к Станиславу со стрелкой влево (ниже блока) -->
+    <div class="line line-h arrow arrow-left" style="left: 340px; top: 280px; width: 400px;"></div>
+    <div class="line line-v" style="left: 240px; top: 318px; height: 12px;"></div>
 
-    <div class="box line-left sergey">Сергей Брус</div>
+    <!-- К Людмиле -->
+    <div class="line line-h" style="left: 240px; top: 355px; width: 20px;"></div>
 
-    <div class="box line-left igor">Игорь Зверёк</div>
-    <div class="box line-left anton">Антон Строй</div>
+    <!-- К Ольге -->
+    <div class="line line-h" style="left: 240px; top: 437px; width: 20px;"></div>
+
+    <!-- От Ольги вправо -->
+    <div class="line line-h" style="left: 460px; top: 437px; width: 280px;"></div>
+    
+    <!-- От Дмитрия к Ольге со стрелкой влево -->
+    <div class="line line-h arrow arrow-left" style="left: 460px; top: 437px; width: 280px;"></div>
+
+    <!-- Вертикаль справа от Ольги/Дмитрия -->
+    <div class="line line-v" style="left: 720px; top: 437px; height: 124px;"></div>
+
+    <!-- Горизонтали к правым блокам -->
+    <div class="line line-h" style="left: 720px; top: 437px; width: 20px;"></div>
+    <div class="line line-h" style="left: 720px; top: 499px; width: 20px;"></div>
+    <div class="line line-h" style="left: 720px; top: 560px; width: 20px;"></div>
+
+    <!-- От правого края Максима направо -->
+    <div class="line line-h" style="left: 940px; top: 561px; width: 50px;"></div>
+    
+    <!-- От конца горизонтальной линии вверх до середины Дмитрия -->
+    <div class="line line-v" style="left: 990px; top: 437px; height: 124px;"></div>
+    
+    <!-- Стрелка вправо от вертикальной линии к правому краю Дмитрия -->
+    <div class="line line-h arrow arrow-left" style="left: 940px; top: 437px; width: 50px;"></div>
+
+    <!-- К Сергею -->
+    <div class="line line-h" style="left: 240px; top: 620px; width: 20px;"></div>
+
+    <!-- К Игорю -->
+    <div class="line line-h" style="left: 120px; top: 680px; width: 20px;"></div>
+
+    <!-- К Антону -->
+    <div class="line line-h" style="left: 120px; top: 742px; width: 20px;"></div>
+
+    <!-- Вертикаль справа вверх -->
+    <div class="line line-v" style="left: 720px; top: 120px; height: 78px;"></div>
+
+    <!-- Горизонтали к верхним правым блокам -->
+    <div class="line line-h" style="left: 720px; top: 197px; width: 20px;"></div>
   </div>
 </body>
 </html>
