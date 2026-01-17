@@ -80,12 +80,8 @@ function handlePress(button, e) {
  * @param {HTMLElement} 
  */
 function handleRelease(button) {
-    setTimeout(() => {
-        button.classList.remove('pressed');
-        if (currentPressedButton === button) {
-            currentPressedButton = null;
-        }
-    }, 50);
+    // Не убираем класс 'pressed' при отпускании мыши
+    // Кнопка останется в состоянии нажатой
 }
 
 /**
